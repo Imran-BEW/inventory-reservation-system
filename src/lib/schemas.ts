@@ -6,7 +6,12 @@ export const ReserveSchema = z.object({
   quantity: z.number().int().positive("Quantity must be a positive integer"),
 });
 
-export const ReservationStatusSchema = z.enum(["PENDING", "CONFIRMED", "RELEASED"]);
+export const ReservationStatusSchema = z.enum([
+  "PENDING",
+  "CONFIRMED",
+  "RELEASED",
+  "EXPIRED"
+]);
 
 export type ReserveInput = z.infer<typeof ReserveSchema>;
 export type ReservationStatus = z.infer<typeof ReservationStatusSchema>;
