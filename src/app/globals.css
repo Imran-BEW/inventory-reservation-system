@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #e8ff47;
+  --accent-muted: #e8ff4720;
+  --surface: #141414;
+  --surface-2: #1c1c1c;
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f0ede6;
+  --text-secondary: rgba(240, 237, 230, 0.5);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    background: #0a0a0a;
+    color: var(--text-primary);
+  }
+}
+
+@layer utilities {
+  .font-syne {
+    font-family: var(--font-syne), sans-serif;
+  }
+  .font-dm-sans {
+    font-family: var(--font-dm-sans), sans-serif;
+  }
+}
+
+/* Smooth animations */
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(232, 255, 71, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(232, 255, 71, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 255, 71, 0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s ease forwards;
+}
+
+.pulse-accent {
+  animation: pulse-ring 2s infinite;
+}
